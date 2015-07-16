@@ -423,6 +423,7 @@ noremap <leader>bd :MBEbd<CR>
 """""""""""""""""""""""""""""""""""""""""
 Bundle 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0
 Bundle 'vim-scripts/taglist.vim'
 set tags=tags;/
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
