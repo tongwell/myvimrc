@@ -414,7 +414,7 @@ let g:miniBufExplorerMoreThanOne=2
 let g:miniBufExplCycleArround=1
 
 " 默认方向键左右可以切换buffer
-nnoremap <TAB> :MBEbn<CR>
+"nnoremap <TAB> :MBEbn<CR>
 noremap <leader>bn :MBEbn<CR>
 noremap <leader>bp :MBEbp<CR>
 noremap <leader>bd :MBEbd<CR>
@@ -530,17 +530,18 @@ Bundle 'vim-scripts/matchit.zip'
 let g:ycm_confirm_extra_conf = 0
 " youcompleteme  默认tab  s-tab 和自动补全冲突
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
- let g:ycm_key_list_select_completion=['<C-n>']
- let g:ycm_key_list_select_completion = ['<Down>']
- let g:ycm_key_list_previous_completion=['<C-p>']
- let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_key_list_select_completion=['<C-n>']
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 " 在注释输入中也能补全
- let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_comments = 1
 " 在字符串输入中也能补全
- let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_strings = 1
 " 注释和字符串中的文字也会被收入补全
- let g:ycm_collect_identifiers_from_comments_and_strings = 0
- nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 " 插件：快速插入代码片段
 """""""""""""""""""""""""""""""""""""""""
@@ -1888,4 +1889,3 @@ command! -nargs=0 DoxLic :call <SID>DoxygenLicenseFunc()
 command! -nargs=0 DoxAuthor :call <SID>DoxygenAuthorFunc()
 command! -nargs=1 DoxUndoc :call <SID>DoxygenUndocumentFunc(<q-args>)
 command! -nargs=0 DoxBlock :call <SID>DoxygenBlockFunc()
-
