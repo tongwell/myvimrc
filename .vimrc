@@ -389,6 +389,7 @@ nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR>
 nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR> 
 " i: Find files #including this file 
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR> 
+let g:cscope_silent = 1
 Bundle 'a.vim'
 Bundle 'solarized'
 "colorscheme solarized
