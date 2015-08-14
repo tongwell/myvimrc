@@ -541,6 +541,8 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 " 注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" 文件大于时禁用YCM
+let g:ycm_disable_for_files_larger_than_kb = 0
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
