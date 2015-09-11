@@ -660,6 +660,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 nnoremap <leader>h :GundoToggle<CR>
 
+" javascript 代码格式化
+Bundle 'jsbeautify'
+nnoremap <F4> :call g:Jsbeautify()<CR>
+
 " end turn on
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""
