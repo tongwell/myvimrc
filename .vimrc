@@ -419,6 +419,8 @@ let g:miniBufExplCycleArround=1
 noremap <leader>bn :MBEbn<CR>
 noremap <leader>bp :MBEbp<CR>
 noremap <leader>bd :MBEbd<CR>
+noremap <leader>bb :MBEbb<CR>
+noremap <leader>bf :MBEbf<CR>
 
 " 插件：标签导航等
 """""""""""""""""""""""""""""""""""""""""
