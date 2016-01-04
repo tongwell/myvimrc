@@ -405,22 +405,24 @@ let g:netrw_home='~/'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
 
 " for minibufferexpl
-Bundle 'fholgado/minibufexpl.vim'
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplForceSyntaxEnable = 1
-let g:miniBufExplorerMoreThanOne=2
-let g:miniBufExplCycleArround=1
+"Bundle 'fholgado/minibufexpl.vim'
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplForceSyntaxEnable = 1
+"let g:miniBufExplorerMoreThanOne=2
+"let g:miniBufExplCycleArround=1
 
 " 默认方向键左右可以切换buffer
 "nnoremap <TAB> :MBEbn<CR>
-noremap <leader>bn :MBEbn<CR>
-noremap <leader>bp :MBEbp<CR>
-noremap <leader>bd :MBEbd<CR>
-noremap <leader>bb :MBEbb<CR>
-noremap <leader>bf :MBEbf<CR>
+"noremap <leader>bn :MBEbn<CR>
+"noremap <leader>bp :MBEbp<CR>
+"noremap <leader>bd :MBEbd<CR>
+"noremap <leader>bb :MBEbb<CR>
+"noremap <leader>bf :MBEbf<CR>
+
+Bundle "bufexplorer.zip"
 
 " 插件：标签导航等
 """""""""""""""""""""""""""""""""""""""""
