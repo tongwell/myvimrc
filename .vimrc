@@ -69,7 +69,7 @@ set tabstop=4                    "设置Tab键的宽度(等同的空格个数)
 set shiftwidth=4                 "自动对齐的空格数
 set softtabstop=4                "按退格键时可以一次删掉4个空格
 set smarttab                     "insert tabs on the start of a line according to shiftwidth, not tabstop
-set expandtab                    "将Tab自动转化成空格(需要输入真正的Tab键时,使用Ctrl+V+Tab)
+"set expandtab                    "将Tab自动转化成空格(需要输入真正的Tab键时,使用Ctrl+V+Tab)
 set shiftround                   "Use multiple of shiftwidth when indenting with '<' and '>'
 
 " 编码
@@ -423,6 +423,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "noremap <leader>bf :MBEbf<CR>
 
 Bundle "bufexplorer.zip"
+let g:bufExplorerSortBy='number'
 
 " 插件：标签导航等
 """""""""""""""""""""""""""""""""""""""""
