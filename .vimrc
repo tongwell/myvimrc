@@ -423,7 +423,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "noremap <leader>bf :MBEbf<CR>
 
 Bundle "bufexplorer.zip"
-let g:bufExplorerSortBy='number'
+let g:bufExplorerSortBy='mru'
 
 " 插件：标签导航等
 """""""""""""""""""""""""""""""""""""""""
