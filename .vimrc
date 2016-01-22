@@ -370,7 +370,7 @@ Bundle 'gmarik/vundle'
 " :BundleInstall!    update
 " :BundleClean       remove plugin not in list
 Bundle 'cscope.vim'
-Bundle 'autoload_cscope.vim'
+"Bundle 'autoload_cscope.vim'
 nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR> 
 nnoremap <leader>l :call ToggleLocationList()<CR> 
 " s: Find this C symbol 
