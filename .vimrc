@@ -369,7 +369,6 @@ Bundle 'gmarik/vundle'
 " :BundleInstall     install
 " :BundleInstall!    update
 " :BundleClean       remove plugin not in list
-Bundle 'cscope.vim'
 "Bundle 'autoload_cscope.vim'
 nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR> 
 nnoremap <leader>l :call ToggleLocationList()<CR> 
@@ -667,6 +666,8 @@ nnoremap <leader>h :GundoToggle<CR>
 
 " javascript 代码格式化
 Bundle 'jsbeautify'
+
+Bundle 'cscope.vim'
 nnoremap <F4> :call g:Jsbeautify()<CR>
 
 " end turn on
