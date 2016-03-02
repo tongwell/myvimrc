@@ -391,7 +391,9 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 let g:cscope_silent = 1
 Bundle 'a.vim'
 Bundle 'solarized'
-"colorscheme solarized
+colorscheme solarized
+"set background=dark
+set t_Co=256
 " 插件：目录导航等
 """""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/nerdtree'
@@ -514,7 +516,7 @@ map <leader><space> :FixWhitespace<cr>
 
 " 插件：主题solarized
 Bundle 'altercation/vim-colors-solarized'
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
