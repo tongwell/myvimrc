@@ -188,7 +188,8 @@ Bundle 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
 
 " 插件：主题solarized
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'altercation/vim-colors-solarized'
+Bundle 'solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
