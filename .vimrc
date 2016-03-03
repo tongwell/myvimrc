@@ -22,6 +22,12 @@ filetype indent on               "针对不同的文件类型采用不同的缩�
 filetype plugin on               "允许插件
 filetype plugin indent on        "启动自动补全
 
+" 语法
+"""""""""""""""""""""""""""""""""""""""""
+syntax enable                    "打开语法高亮
+syntax on
+
+
 " 前导符号
 let mapleader = ','
 let g:mapleader = ','
@@ -406,11 +412,6 @@ set termencoding=utf-8           "这句只影响普通模式 (非图形界面) 
 set ffs=unix,dos,mac             "Use Unix as the standard file type
 set formatoptions+=m             "如遇Unicode值大于255的文本，不必等到空格再折行。
 set formatoptions+=B             "合并两行中文时，不在中间加空格：
-
-" 语法
-"""""""""""""""""""""""""""""""""""""""""
-syntax enable                    "打开语法高亮
-syntax on
 
 " 撤销
 """""""""""""""""""""""""""""""""""""""""
