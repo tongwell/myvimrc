@@ -98,7 +98,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 Bundle "bufexplorer.zip"
 let g:bufExplorerSortBy='mru'
-let g:bufExplorerShowUnlisted=1      " Show unlisted buffers.
 
 " 插件：标签导航等
 """""""""""""""""""""""""""""""""""""""""
