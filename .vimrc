@@ -342,10 +342,10 @@ Bundle 'sjl/gundo.vim'
 nnoremap <leader>h :GundoToggle<CR>
 
 " javascript 代码格式化
-Bundle 'jsbeautify'
+Bundle '_jsbeautify'
 
 Bundle 'cscope.vim'
-nnoremap <F4> :call g:Jsbeautify()<CR>
+nnoremap <F4> :call g:_Jsbeautify()<CR>
 
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""
