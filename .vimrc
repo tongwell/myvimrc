@@ -344,7 +344,7 @@ nnoremap <leader>h :GundoToggle<CR>
 " javascript 代码格式化
 Bundle '_jsbeautify'
 
-Bundle 'cscope.vim'
+Bundle 'tongwell/cscope.vim'
 nnoremap <F4> :call g:_Jsbeautify()<CR>
 
 filetype plugin indent on
