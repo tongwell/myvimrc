@@ -66,6 +66,7 @@ nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 " i: Find files #including this file 
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR> 
 let g:cscope_silent = 1
+let g:cscope_auto_update = 1
 Bundle 'a.vim'
 " 插件：目录导航等
 """""""""""""""""""""""""""""""""""""""""
