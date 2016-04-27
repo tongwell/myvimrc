@@ -38,15 +38,15 @@ let g:mapleader = ','
 """""""""""""""""""""""""""""""""""""""""
 
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
 " vim plugin bundle control, command model
-" :BundleInstall     install
-" :BundleInstall!    update
-" :BundleClean       remove plugin not in list
-"Bundle 'autoload_cscope.vim'
+" :PluginInstall     install
+" :PluginInstall!    update
+" :PluginClean       remove plugin not in list
+"Plugin 'autoload_cscope.vim'
 nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR> 
 nnoremap <leader>l :call ToggleLocationList()<CR> 
 " s: Find this C symbol 
@@ -67,10 +67,10 @@ nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR> 
 let g:cscope_silent = 1
 let g:cscope_auto_update = 1
-Bundle 'a.vim'
+Plugin 'a.vim'
 " 插件：目录导航等
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
@@ -80,7 +80,7 @@ let g:netrw_home='~/'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
 
 " for minibufferexpl
-"Bundle 'fholgado/minibufexpl.vim'
+"Plugin 'fholgado/minibufexpl.vim'
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplMapWindowNavArrows = 1
 "let g:miniBufExplMapCTabSwitchBufs = 1
@@ -97,15 +97,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "noremap <leader>bb :MBEbb<CR>
 "noremap <leader>bf :MBEbf<CR>
 
-Bundle "bufexplorer.zip"
+Plugin 'bufexplorer.zip'
 let g:bufExplorerSortBy='mru'
 
 " 插件：标签导航等
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
-Bundle 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/taglist.vim'
 set tags=tags;/
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
 let Tlist_Auto_Highlight_Tag = 1
@@ -133,7 +133,7 @@ let Tlist_WinWidth = 25
 
 " 插件：文件搜索
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
@@ -154,14 +154,14 @@ let g:ctrlp_follow_symlinks=1
 
 " 插件：状态栏美观
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 " if want to use fancy,need to add font patch -> git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
 "let g:Powerline_symbols = 'fancy'
 "let g:Powerline_symbols = 'unicode'
 
 " 插件：括号显示增强
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -185,34 +185,36 @@ let g:rbpt_loadcmd_toggle = 0
 
 " 插件：将每行无效的空格标红（,空格按键去掉末尾空格）
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'bronson/vim-trailing-whitespace'
+Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
 
 " 插件：主题solarized
-"Bundle 'altercation/vim-colors-solarized'
-Bundle 'solarized'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 
 " 插件：主题molokai
-Bundle 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 let g:molokai_original = 1
 let g:rehash256 = 1
 
 " 插件：快速移动
 """""""""""""""""""""""""""""""""""""""""
 " 更高效的移动 ,, + w/fx
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'vim-scripts/matchit.zip'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'vim-scripts/matchit.zip'
 
 " 插件：迄今为止用到的最好的自动VIM自动补全插件
 """""""""""""""""""""""""""""""""""""""""
- Bundle 'Valloric/YouCompleteMe'
+ Plugin 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
 " youcompleteme  默认tab  s-tab 和自动补全冲突
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
+" 指定python解释器，要和编译ycm时使用的一致，否则初始化失败
+let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_key_list_select_completion=['<C-n>']
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion=['<C-p>']
@@ -230,7 +232,7 @@ nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " 插件：快速插入代码片段
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 " 定义存放代码片段的文件夹 .vim/snippets下，使用自定义和默认的，将会的到全局，有冲突的会提示
@@ -238,7 +240,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 
 " 插件：快速加/减注释(选中后,按,cc加上注释,按,cu解开注释)
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " 插件：用双引号/单引号包裹字符串
 """""""""""""""""""""""""""""""""""""""""
@@ -248,35 +250,35 @@ Bundle 'scrooloose/nerdcommenter'
 " " Hello world!" -> Hello world!
 " ysiw"
 " Hello -> " Hello"
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " 插件：自动补全单引号，双引号等
 """""""""""""""""""""""""""""""""""""""""
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 " for python docstring " ,优化输入
 autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
 
 " 自动补全html/xml标签
-Bundle 'docunext/closetag.vim'
+Plugin 'docunext/closetag.vim'
 let g:closetag_html_style=1
 
 " 插件：代码格式化
 """""""""""""""""""""""""""""""""""""""""
-"Bundle 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 "nmap <Leader>a= :Tabularize /=<CR>
 "vmap <Leader>a= :Tabularize /=<CR>
 "nmap <Leader>a: :Tabularize /:\zs<CR>
 "vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " for visual selection
-"Bundle 'terryma/vim-expand-region'
+"Plugin 'terryma/vim-expand-region'
 "map = <Plug>(expand_region_expand)
 "map - <Plug>(expand_region_shrink)
 
 " 插件：多光标批量操作
 """""""""""""""""""""""""""""""""""""""""
-" Bundle 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
 " let g:multi_cursor_use_default_mapping=0
 " Default mapping
 " let g:multi_cursor_next_key='<C-m>'
@@ -288,7 +290,7 @@ let g:closetag_html_style=1
 """""""""""""""""""""""""""""""""""""""""
 " 编辑时自动语法检查标红, vim-flake8目前还不支持,所以多装一个
 " 使用pyflakes,速度比pylint快
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=1
@@ -297,56 +299,57 @@ let g:syntastic_python_checkers=['pyflakes']
 highlight SyntasticErrorSign guifg=white guibg=black
 
 " python fly check, 弥补syntastic只能打开和保存才检查语法的不足
-Bundle 'kevinw/pyflakes-vim'
+Plugin 'kevinw/pyflakes-vim'
 let g:pyflakes_use_quickfix = 0
 
 " 插件：具体语言语法高亮
 """""""""""""""""""""""""""""""""""""""""
 " for python.vim syntax highlight
-Bundle 'hdima/python-syntax'
+Plugin 'hdima/python-syntax'
 let python_highlight_all = 1
 
 " for golang
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'Blackrush/vim-gocode'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'Blackrush/vim-gocode'
 
 " for markdown
-Bundle 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
 " for javascript
-Bundle "pangloss/vim-javascript"
+Plugin 'pangloss/vim-javascript'
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 " for jquery
-Bundle 'nono/jquery.vim'
+Plugin 'nono/jquery.vim'
 
 " for jinja2 highlight
-Bundle 'Glench/Vim-Jinja2-Syntax'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " for nginx conf file highlight.   need to confirm it works
-"Bundle 'thiderman/nginx-vim-syntax'
+"Plugin 'thiderman/nginx-vim-syntax'
 
 " 插件：杂项
 """""""""""""""""""""""""""""""""""""""""
 " task list
-Bundle 'vim-scripts/TaskList.vim'
+Plugin 'vim-scripts/TaskList.vim'
 map <leader>td <Plug>TaskList
 
 " for git 尚未用起来
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " 可以查看/回到某个历史状态
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 nnoremap <leader>h :GundoToggle<CR>
 
 " javascript 代码格式化
-Bundle '_jsbeautify'
+Plugin '_jsbeautify'
 
-Bundle 'tongwell/cscope.vim'
+Plugin 'tongwell/cscope.vim'
 nnoremap <F4> :call g:_Jsbeautify()<CR>
+call vundle#end()
 
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""
@@ -619,8 +622,8 @@ endif
 set background=dark
 colorscheme solarized
 set t_Co=256
-" colorscheme molokai
-" colorscheme desert
+"colorscheme molokai
+"colorscheme desert
 
 " 设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
