@@ -47,24 +47,24 @@ Plugin 'VundleVim/Vundle.vim'
 " :PluginInstall!    update
 " :PluginClean       remove plugin not in list
 "Plugin 'autoload_cscope.vim'
-nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR> 
-nnoremap <leader>l :call ToggleLocationList()<CR> 
-" s: Find this C symbol 
-nnoremap  <leader>fs :call cscope#find('s', expand('<cword>'))<CR> 
-" g: Find this definition 
-nnoremap  <leader>fg :call cscope#find('g', expand('<cword>'))<CR> 
-" d: Find functions called by this function 
-nnoremap  <leader>fd :call cscope#find('d', expand('<cword>'))<CR> 
-" c: Find functions calling this function 
-nnoremap  <leader>fc :call cscope#find('c', expand('<cword>'))<CR> 
-" t: Find this text string 
-nnoremap  <leader>ft :call cscope#find('t', expand('<cword>'))<CR> 
-" e: Find this egrep pattern 
-nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR> 
-" f: Find this file 
-nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR> 
-" i: Find files #including this file 
-nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR> 
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR> 
+nnoremap <leader>l :call ToggleLocationList()<CR>
+" s: Find this C symbol
+nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 let g:cscope_silent = 1
 let g:cscope_auto_update = 1
 Plugin 'a.vim'
@@ -229,6 +229,8 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 let g:ycm_disable_for_files_larger_than_kb = 0
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+set cursorcolumn
+set cursorline
 
 " 插件：快速插入代码片段
 """""""""""""""""""""""""""""""""""""""""
@@ -347,7 +349,8 @@ nnoremap <leader>h :GundoToggle<CR>
 " javascript 代码格式化
 Plugin '_jsbeautify'
 
-Plugin 'tongwell/cscope.vim'
+"Plugin 'tongwell/cscope.vim'
+Plugin 'brookhong/cscope.vim'
 nnoremap <F4> :call g:_Jsbeautify()<CR>
 call vundle#end()
 
